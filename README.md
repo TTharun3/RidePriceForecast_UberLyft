@@ -1,57 +1,31 @@
-# RidePriceForecast_UberLyft
+Introduction
 
+The dynamic pricing model of ride-sharing companies like Uber and Lyft has transformed urban transportation. Unlike traditional public transport with fixed rates, ride-sharing prices fluctuate based on real-time demand and supply, leading to varying costs for the same trip at different times. Understanding the factors influencing these price changes can help consumers make cost-effective choices and enable these companies to refine their pricing algorithms. This report analyzes a dataset reflecting Uber and Lyft ride prices in Boston and investigates the factors affecting these prices, including time of day, weather conditions, and location.
 
-# Hi there, I'm [Your Name Here]! 👨‍🎓
+Executive Summary
 
-![Banner Image](link_to_your_banner_image.jpg)
+This report presents an in-depth analysis of ride-sharing prices from Uber and Lyft, using a dataset that captures the intricacies of dynamic pricing. The analysis reveals that time of day, weather conditions, and specific dates have significant impacts on pricing and ride demand. A Random Forest model was employed to predict ride prices, achieving an explanation of 90% of the variability in the data. Key findings indicate that Uber is preferred for longer distances and that weather conditions can notably influence the decision to book a ride.
 
-## I'm a Data Engineer!
+Dataset Description
 
-- 🎓 I graduated from [Your University] with a degree in [Your Degree].
-- 🔭 I’m currently working on [Your Current Project].
-- 🌱 I’m currently learning [What You're Learning].
-- 👯 I’m looking to collaborate on [Types of Projects You're Interested In].
-- 🤔 I’m looking for help with [What You Need Help With].
-- 💬 Ask me about [Topics You're Knowledgeable About].
-- 📫 How to reach me: [your.email@example.com](mailto:your.email@example.com).
-- 😄 Pronouns: [Your Pronouns].
-- ⚡ Fun fact: [Fun Fact About You].
+The dataset comprises real-time queries from the Uber and Lyft APIs, encompassing various types of rides, their prices, surge multipliers, and corresponding weather conditions. Data was collected in Boston for approximately one week in November 2018, using a custom Scala application. Although the primary focus was not on time-series analysis, the data provides a rich source for understanding the price dynamics in ride-sharing.
 
-### Connect with me:
+Data Preparation
 
-[<img align="left" alt="LinkedIn" width="22px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" />][linkedin]
-[<img align="left" alt="Instagram" width="22px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/instagram/instagram-original.svg" />][instagram]
-[<img align="left" alt="Twitter" width="22px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" />][twitter]
-[<img align="left" alt="GitHub" width="22px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />][github]
+Data cleaning and preparation steps were thorough, addressing missing values, anomalies, and appropriate transformations. Initial explorations included statistical summaries and data visualizations to understand data distributions and outliers. This groundwork ensured the reliability of subsequent analyses.
 
-<br />
+Data Analysis Methodology
 
-### Languages and Tools:
+The data analysis employed statistical techniques to identify trends and relationships within the dataset. The Exploratory Data Analysis (EDA) utilized a variety of visualization methods, such as bar charts and line plots, to uncover patterns related to ride prices across different cab types, destinations, sources, and weather conditions.
 
-[<img align="left" alt="Python" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />][python]
-[<img align="left" alt="SQL" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />][sql]
-[<img align="left" alt="Spark" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" />][spark]
-[<img align="left" alt="Tableau" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg" />][tableau]
+Exploratory Data Analysis (EDA)
 
-<br />
-<br />
+EDA focused heavily on visualization, with bar plots comparing the average price of rides across different cab types, and line graphs assessing the impact of environmental factors like temperature, pressure, and wind speed on pricing. Notably, certain cab types showed a higher average price, and there was an observable trend of price variation with changes in weather conditions.
 
----
+Model Selection
 
-### 📕 Latest Blog Posts
+A Random Forest model was chosen for its ability to handle non-linear relationships and interactions between variables without extensive hyperparameter tuning. The model was assessed using cross-validation to ensure robustness and evaluated using standard metrics to confirm its predictive power.
 
-<!-- BLOG-POST-LIST:START -->
-- [Your Blog Post Title](blog_post_link)
-- [Your Blog Post Title](blog_post_link)
-<!-- BLOG-POST-LIST:END -->
+Results and Recommendations
 
----
-
-[instagram]: https://instagram.com/yourusername
-[twitter]: https://twitter.com/yourusername
-[linkedin]: https://linkedin.com/in/yourusername
-[github]: https://github.com/yourusername
-[python]: https://python.org
-[sql]: https://en.wikipedia.org/wiki/SQL
-[spark]: https://spark.apache.org/
-[tableau]: https://public.tableau.com/en-us/s/
+The model demonstrated a strong ability to predict ride prices, with weather conditions, time of day, and day of the week emerging as significant predictors. Recommendations include preferring Uber for longer distances and checking weather forecasts to anticipate price surges. Additionally, the analysis suggests avoiding rides during peak times on Mondays and Tuesdays due to higher costs.
